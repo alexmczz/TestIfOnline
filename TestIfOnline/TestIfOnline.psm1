@@ -1,5 +1,3 @@
-﻿
-
 function TestIfOnline {
     [CmdletBinding()]
     param (
@@ -12,6 +10,7 @@ function TestIfOnline {
         if ($testPconline.PingSucceeded) {
             Write-Host "Online"
             [console]::Beep(500,500)
+            break  # Break the loop if the PC is online
         } else {
             Write-Host "Offline"
         }
